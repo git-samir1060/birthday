@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff4fa;
+    color:#44253b;
+    overflow-x:hidden;
+}
+
+/* ---------- OPENING SCREEN ---------- */
+
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#ffd6e9,#fff0f7,#fbd1ff);
+    transition:1s;
+}
+
+.intro-content{
+    padding:30px;
+}
+
+.intro-content h1{
+    font-family:'Dancing Script',cursive;
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.intro-content p{
+    font-size:1rem;
+    margin-bottom:30px;
+}
+
+.gift{
+    font-size:100px;
+    animation:bounce 1.5s infinite;
+    cursor:pointer;
+}
+
+.open-btn{
+    border:none;
+    padding:14px 30px;
+    border-radius:50px;
+    background:#ff5c9a;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(255,92,154,.3);
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-15px) rotate(3deg);}
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top,#fff,#ffe3ef 50%,#ffd1e5);
+}
+
+.hero-content{
+    z-index:5;
+    padding:20px;
+}
+
+.small{
+    font-size:15px;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    font-family:'Dancing Script',cursive;
+    font-size:clamp(4rem,10vw,8rem);
+    color:#ff4f94;
+    text-shadow:0 5px 20px rgba(255,79,148,.15);
+}
+
+.hero h2{
+    font-size:clamp(1.3rem,4vw,2rem);
+    font-weight:500;
+}
+
+.hero p{
+    margin-top:15px;
+}
+
+/* balloons */
+
+.balloon{
+    position:absolute;
+    width:55px;
+    height:70px;
+    border-radius:50%;
+    background:#ff8fba;
+    animation:float 7s infinite ease-in-out;
+}
+
+.balloon:after{
+    content:"";
+    position:absolute;
+    width:1px;
+    height:100px;
+    background:#777;
+    top:68px;
+    left:50%;
+}
+
+.b1{left:8%;top:20%;animation-delay:0s;}
+.b2{right:10%;top:15%;background:#c88cff;animation-delay:2s;}
+.b3{left:15%;bottom:15%;background:#ffd166;animation-delay:3s;}
+.b4{right:15%;bottom:20%;background:#79d9ff;animation-delay:1s;}
+
+@keyframes float{
+    50%{transform:translateY(-35px) rotate(6deg);}
+}
+
+/* ---------- SECTION ---------- */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-family:'Dancing Script',cursive;
+    font-size:3.5rem;
+    color:#ff5797;
+}
+
+.section-title p{
+    margin-top:8px;
+}
+
+/* ---------- PHOTOS ---------- */
+
+.gallery{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.photo-card{
+    background:white;
+    padding:10px 10px 18px;
+    border-radius:10px;
+    box-shadow:0 12px 35px rgba(112,55,87,.12);
+    transform:rotate(var(--rotate));
+    transition:.5s;
+}
+
+.photo-card:hover{
+    transform:rotate(0deg) scale(1.05);
+    z-index:10;
+}
+
+.photo-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.photo-card p{
+    text-align:center;
+    font-family:'Dancing Script',cursive;
+    font-size:22px;
+    margin-top:10px;
+}
+
+/* ---------- MESSAGE ---------- */
+
+.message{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:45px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(103,43,76,.1);
+    position:relative;
+}
+
+.message h2{
+    font-family:'Dancing Script',cursive;
+    color:#ff5797;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.message p{
+    line-height:2;
+    font-size:17px;
+}
+
+/* ---------- CAKE ---------- */
+
+.cake-section{
+    text-align:center;
+    background:linear-gradient(135deg,#fff1f8,#f9e8ff);
+}
+
+.cake{
+    position:relative;
+    width:220px;
+    height:180px;
+    margin:70px auto 30px;
+}
+
+.layer{
+    position:absolute;
+    width:220px;
+    height:60px;
+    background:#ff91b9;
+    border-radius:15px;
+    left:0;
+}
+
+.layer1{bottom:0;}
+.layer2{
+    bottom:45px;
+    width:180px;
+    left:20px;
+    background:#ffb3cc;
+}
+
+.cake-top{
+    position:absolute;
+    bottom:90px;
+    width:140px;
+    height:45px;
+    left:40px;
+    background:#fff;
+    border-radius:50%;
+}
+
+.candle{
+    position:absolute;
+    bottom:125px;
+    width:12px;
+    height:45px;
+    background:#b78cff;
+    border-radius:5px;
+}
+
+.c1{left:75px;}
+.c2{left:105px;}
+.c3{left:135px;}
+
+.flame{
+    position:absolute;
+    width:15px;
+    height:22px;
+    background:#ffb703;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    bottom:165px;
+    animation:flicker .4s infinite alternate;
+}
+
+.f1{left:74px;}
+.f2{left:104px;}
+.f3{left:134px;}
+
+@keyframes flicker{
+    from{transform:rotate(-45deg) scale(1);}
+    to{transform:rotate(-40deg) scale(.8);}
+}
+
+.wish-btn{
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    background:#ff5797;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* ---------- FINAL ---------- */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#ffd5e8,#f5d9ff);
+}
+
+.final-content{
+    max-width:800px;
+}
+
+.final h2{
+    font-family:'Dancing Script',cursive;
+    font-size:5rem;
+    color:#ff428d;
+}
+
+.final p{
+    font-size:19px;
+    line-height:2;
+    margin-top:20px;
+}
+
+/* ---------- HEARTS ---------- */
+
+.heart{
+    position:fixed;
+    pointer-events:none;
+    animation:heartUp 4s linear forwards;
+    z-index:999;
+}
+
+@keyframes heartUp{
+    from{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh) scale(1.8);
+        opacity:0;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px){
+
+    .intro-content h1{
+        font-size:3rem;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+        padding:0 10px;
+    }
+
+    .photo-card img{
+        height:380px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .message{
+        padding:30px 20px;
+    }
+
+    .final h2{
+        font-size:3.8rem;
+    }
+
+    .final p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+
+<div id="intro">
+
+    <div class="intro-content">
+
+        <div class="gift">🎁</div>
+
+        <h1>A Little Surprise...</h1>
+
+        <p>
+            Someone very special has a birthday today 💗
+        </p>
+
+        <button class="open-btn" onclick="openWebsite()">
+            Open Your Surprise ✨
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+
+    <div class="hero-content">
+
+        <div class="small">
+            ✨ TODAY IS YOUR SPECIAL DAY ✨
+        </div>
+
+        <h1>Happy Birthday</h1>
+
+        <h2>My Beautiful Bestie 💗</h2>
+
+        <p>
+            A tiny website for a very important human 🥹
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Our Little Memories 📸</h2>
+
+        <p>
+            15 pictures, countless memories and one crazy friendship. 💕
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="photo-card" style="--rotate:-3deg">
+            <img src="photos/photo1.jpg">
+            <p>That smile 🥹</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:3deg">
+            <img src="photos/photo2.jpg">
+            <p>Certified cute 😂</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-2deg">
+            <img src="photos/photo3.jpg">
+            <p>Good times 💗</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:4deg">
+            <img src="photos/photo4.jpg">
+            <p>One of my favourites 🫶</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-4deg">
+            <img src="photos/photo5.jpg">
+            <p>Always smiling ✨</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:2deg">
+            <img src="photos/photo6.jpg">
+            <p>Our madness 😂</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-3deg">
+            <img src="photos/photo7.jpg">
+            <p>Beautiful memories 🌸</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:3deg">
+            <img src="photos/photo8.jpg">
+            <p>Bestie moments 💕</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-2deg">
+            <img src="photos/photo9.jpg">
+            <p>Never a boring day 😭</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:4deg">
+            <img src="photos/photo10.jpg">
+            <p>Just us 🫶</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-4deg">
+            <img src="photos/photo11.jpg">
+            <p>Forever memories 💗</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:2deg">
+            <img src="photos/photo12.jpg">
+            <p>Pure happiness ✨</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-3deg">
+            <img src="photos/photo13.jpg">
+            <p>Crazy bestie 😂</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:3deg">
+            <img src="photos/photo14.jpg">
+            <p>More memories to come 🌸</p>
+        </div>
+
+        <div class="photo-card" style="--rotate:-2deg">
+            <img src="photos/photo15.jpg">
+            <p>My favourite human 💗</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section>
+
+    <div class="message">
+
+        <h2>A Little Message For You 💌</h2>
+
+        <p>
+
+            Happy Birthday to one of the most amazing people in my life. 💗
+
+            <br><br>
+
+            I don't know how we became this close, but honestly,
+            I'm really glad we did.
+
+            <br><br>
+
+            Thank you for all the laughs, stupid conversations,
+            random plans, crazy moments and all those memories
+            that somehow became my favourite ones.
+
+            <br><br>
+
+            You deserve all the happiness, success and love in the world.
+
+            <br><br>
+
+            Never stop smiling, never stop being the crazy person
+            you are and please don't become too mature 😂
+
+            <br><br>
+
+            Stay the same beautiful soul. 🫶
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CAKE -->
+
+<section class="cake-section">
+
+    <div class="section-title">
+
+        <h2>Make A Wish 🎂</h2>
+
+        <p>
+            Close your eyes... make a wish... ✨
+        </p>
+
+    </div>
+
+
+    <div class="cake">
+
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="cake-top"></div>
+
+        <div class="candle c1"></div>
+        <div class="candle c2"></div>
+        <div class="candle c3"></div>
+
+        <div class="flame f1"></div>
+        <div class="flame f2"></div>
+        <div class="flame f3"></div>
+
+    </div>
+
+
+    <button class="wish-btn" onclick="makeWish()">
+        Make A Wish ✨
+    </button>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="final-content">
+
+        <h2>Happy Birthday! 🎂💗</h2>
+
+        <p>
+
+            Here's to another year of laughter,
+            adventures, crazy memories and happiness.
+
+            <br><br>
+
+            And remember...
+
+            <br>
+
+            You're not getting rid of me anytime soon. 😂🫶
+
+            <br><br>
+
+            <b>Stay happy. Stay crazy. Stay YOU. 💕</b>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* OPEN WEBSITE */
+
+function openWebsite(){
+
+    document.getElementById("intro").style.opacity="0";
+
+    setTimeout(function(){
+
+        document.getElementById("intro").style.display="none";
+
+    },1000);
+
+
+    const music=document.getElementById("music");
+
+    music.play().catch(()=>{});
+
+    createHearts();
+}
+
+
+/* HEART ANIMATION */
+
+function createHearts(){
+
+    setInterval(()=>{
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML=["💗","💕","💖","💓","✨"][Math.floor(Math.random()*5)];
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.bottom="-30px";
+
+        heart.style.fontSize=(15+Math.random()*25)+"px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+
+    },500);
+
+}
+
+
+/* WISH */
+
+function makeWish(){
+
+    document.querySelectorAll(".flame").forEach(flame=>{
+        flame.style.display="none";
+    });
+
+    createConfetti();
+
+    setTimeout(()=>{
+
+        alert(
+            "✨ Wish made! ✨\n\n" +
+            "May all your dreams come true. 💗\n" +
+            "Happy Birthday Bestie! 🎂"
+        );
+
+    },500);
+
+}
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+    for(let i=0;i<100;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.innerHTML=["🎉","✨","💗","🎊","💕"]
+        [Math.floor(Math.random()*5)];
+
+        confetti.style.position="fixed";
+        confetti.style.left=Math.random()*100+"vw";
+        confetti.style.top="-30px";
+        confetti.style.fontSize="25px";
+        confetti.style.zIndex="9999";
+
+        document.body.appendChild(confetti);
+
+        const duration=2000+Math.random()*3000;
+
+        confetti.animate(
+            [
+                {transform:"translateY(0) rotate(0deg)",opacity:1},
+                {transform:
+                    `translateY(110vh) rotate(${Math.random()*720}deg)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:duration,
+                easing:"ease-out"
+            }
+        );
+
+        setTimeout(()=>{
+            confetti.remove();
+        },duration);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
